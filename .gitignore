@@ -1,0 +1,188 @@
+# Created by https://www.gitignore.io
+
+### WebStorm ###
+# Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm
+
+/*.iml
+
+## Directory-based project format:
+.idea/
+!src/codim/template.js/.idea/
+!src/codim/template.ts/.idea/
+
+# if you remove the above rule, at least ignore the follwing:
+
+# User-specific stuff:
+# .idea/workspace.xml
+# .idea/tasks.xml
+# .idea/dictionaries
+
+# Sensitive or high-churn files:
+# .idea/dataSources.ids
+# .idea/dataSources.xml
+# .idea/sqlDataSources.xml
+# .idea/dynamic.xml
+# .idea/uiDesigner.xml
+
+# Gradle:
+# .idea/gradle.xml
+# .idea/libraries
+
+# Mongo Explorer plugin:
+# .idea/mongoSettings.xml
+
+## File-based project format:
+*.ipr
+*.iws
+
+## Plugin-specific files:
+
+# IntelliJ
+out/
+
+# mpeltonen/sbt-idea plugin
+.idea_modules/
+
+# JIRA plugin
+atlassian-ide-plugin.xml
+
+# Crashlytics plugin (for Android Studio and IntelliJ)
+com_crashlytics_export_strings.xml
+
+### git ignore backup ###
+.gitignore~
+
+### dev ###
+src/app/livereload.js
+
+### build ###
+src/build/
+extension/
+
+### deploy ###
+deploy
+
+### crx and pem ###
+*.pem
+*.crx
+
+### Bower ###
+bower_components
+src/bower_components
+
+### Bower ###
+npm-debug.log
+node_modules/
+!src/codim/template.js/node_modules/
+!src/codim/template.ts/node_modules/
+
+### Mac ###
+.DS_Store
+sessionPlayer.js
+testim-headless.zip
+sessionPlayer.zip
+testim-firefox-profile.zip
+
+.vscode/
+!src/codim/template.js/.vscode/
+!src/codim/template.ts/.vscode/
+
+mobile-environment/android-playback-emulator/device-video
+
+testim-report.xml
+src/codim/codim-npm-package/index.d.ts
+src/codim/codim-npm-package/index.js
+# Created by https://www.gitignore.io
+
+### WebStorm ###
+# Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm
+
+/*.iml
+
+## Directory-based project format:
+.idea/
+!src/codim/template.js/.idea/
+!src/codim/template.ts/.idea/
+
+# if you remove the above rule, at least ignore the follwing:
+
+# User-specific stuff:
+# .idea/workspace.xml
+# .idea/tasks.xml
+# .idea/dictionaries
+
+# Sensitive or high-churn files:
+# .idea/dataSources.ids
+# .idea/dataSources.xml
+# .idea/sqlDataSources.xml
+# .idea/dynamic.xml
+# .idea/uiDesigner.xml
+
+# Gradle:
+# .idea/gradle.xml
+# .idea/libraries
+
+# Mongo Explorer plugin:
+# .idea/mongoSettings.xml
+
+## File-based project format:
+*.ipr
+*.iws
+
+## Plugin-specific files:
+
+# IntelliJ
+out/
+
+# mpeltonen/sbt-idea plugin
+.idea_modules/
+
+# JIRA plugin
+atlassian-ide-plugin.xml
+
+# Crashlytics plugin (for Android Studio and IntelliJ)
+com_crashlytics_export_strings.xml
+
+### git ignore backup ###
+.gitignore~
+
+### dev ###
+src/app/livereload.js
+
+### build ###
+src/build/
+extension/
+
+### deploy ###
+deploy
+
+### crx and pem ###
+*.pem
+*.crx
+
+### Bower ###
+bower_components
+src/bower_components
+
+### Bower ###
+npm-debug.log
+node_modules/
+!src/codim/template.js/node_modules/
+!src/codim/template.ts/node_modules/
+
+### Mac ###
+.DS_Store
+sessionPlayer.js
+testim-headless.zip
+sessionPlayer.zip
+testim-firefox-profile.zip
+
+.vscode/
+!src/codim/template.js/.vscode/
+!src/codim/template.ts/.vscode/
+
+mobile-environment/android-playback-emulator/device-video
+
+testim-report.xml
+src/codim/codim-npm-package/index.d.ts
+src/codim/codim-npm-package/index.js
