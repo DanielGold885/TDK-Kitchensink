@@ -82,6 +82,7 @@ sessionPlayer.js
 testim-headless.zip
 sessionPlayer.zip
 testim-firefox-profile.zip
+testim-bin
 
 .vscode/
 !src/codim/template.js/.vscode/
