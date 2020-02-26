@@ -8,9 +8,9 @@ There might be instances where you want to wait for a certain event to occur bef
 
 ### Types of Testim has a built-in waits:
 
-[```Wait for element```](https://help.testim.io/docs/wait-for-element)
-[```Wait for no element```](https://help.testim.io/docs/waitfornoelementselector-options)
-[```Wait for element text```](https://help.testim.io/docs/wait-for-text)
+[```Wait for element```](https://help.testim.io/docs/wait-for-element)  
+[```Wait for no element```](https://help.testim.io/docs/waitfornoelementselector-options)  
+[```Wait for element text```](https://help.testim.io/docs/wait-for-text)  
  ```Sleep``` (Which is not recomended to use in your test, please consider the other options available instead)
 
 
