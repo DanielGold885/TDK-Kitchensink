@@ -1,12 +1,18 @@
 'use strict';
 
-const { go, test } = require('testim');
-const expect = require('chai').expect;
+const { go, it, describe } = require('testim');
 const { searchForItem} = require("../PO/clothesStoreMainPage");
 const { readFromParamFile } = require("../utilities/baseCommon");
 
+//In this usage example we simply call the methods without instansiating the page
 
-test("Search for item from main page", async () => {
-    await go(readFromParamFile("myStoreURL"));
-    await searchForItem(readFromParamFile("clothesItem"));
+
+describe('Clothes store test suite', () => {
+    beforeEach(async () => {
+        await go(readFromParamFile("myStoreURL"));
+    });
+
+    it("Search for item from main page", async () => {
+        await searchForItem(readFromParamFile("clothesItem"));
+    });
 });

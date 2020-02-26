@@ -1,19 +1,23 @@
 'use strict';
 
-const { go, test } = require('testim');
+const { go, it, describe, beforeEach } = require('testim');
 
-const expect = require('chai').expect;
-//const { searchTextInWikipedia, setEnglishLanguage, readWikipediaInEnglishLanguage } = require("../PO/wikipediaHomePage");
-const wikipediaMainPage = require("../PO/wikipediaHomePage");
-const { readFromParamFile } = require("../utilities/baseCommon");
+const wikipediaMainPage = require('../PO/wikipediaHomePage');
+const { readFromParamFile } = require('../utilities/baseCommon');
 
-test("Search a text in Wikipedia", async () => {
+
+describe('Wikipedia test suite', () => {
+    beforeEach(async () => {
     await go(readFromParamFile("wikipediaURL"));
-    await wikipediaMainPage.setEnglishLanguage(wikipediaMainPage.readFromParamFile("Language"));
-    await wikipediaMainPage.searchTextInWikipedia(readFromParamFile("searchText"));
-});
+    });
 
-test("Validate read Wikipedia in your language navigates to the correct page", async () => {
-    await go(readFromParamFile("URL"));
-    await wikipediaMainPage.readWikipediaInEnglishLanguage(readFromParamFile("Language"));
+    it('Search a text in Wikipedia', async () => {
+        await wikipediaMainPage.setLanguage(readFromParamFile('Language'));
+        await wikipediaMainPage.searchTextInWikipedia(readFromParamFile("searchText"));
+    });
+
+    it('Validate read Wikipedia in your language navigates to the correct page', async () => {
+        await wikipediaMainPage.readWikipediaInEnglishLanguage(readFromParamFile('Language'));
+    });
+
 });

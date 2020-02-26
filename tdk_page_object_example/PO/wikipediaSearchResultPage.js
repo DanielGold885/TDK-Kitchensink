@@ -1,9 +1,8 @@
 'use strict';
 
-const { url, click, selectOption, type, waitForText } = require('testim');
-const {expect} = require('chai');
+const { waitForText } = require('testim');
 
-const SEARCH_RESULT_PAGE_HEADLINE = "#firstHeading";
+const SEARCH_RESULT_PAGE_HEADLINE = '#firstHeading';
 
 
 async function validateFirstHeadline(value) {
@@ -12,5 +11,5 @@ async function validateFirstHeadline(value) {
 
 
 module.exports = {
-    validateHeadline,
+    validateFirstHeadline,
 }

@@ -6,12 +6,12 @@ const { expect } = require('chai');
 const searchResultPage = require('./wikipediaSearchResultPage')
 
 
-const SEARCH_TEXT_FIELD = "#searchInput";
-const SEARCH_ICON = "#search-form > fieldset > button > i";
-const ENGLISH_LANGUAGE_SELECTOR = "#searchLanguage > option[value='en']";
-const LANGUAGE = "#jsLangLabel";
-const READ_WIKIPEDIA_IN_YOUR_LANGUAGE_SELECTOR = "#js-lang-list-button > i.sprite.svg-arrow-down-blue";
-const ENGLISH_LINK = "a[lang='en']";
+const SEARCH_TEXT_FIELD = '#searchInput';
+const SEARCH_ICON = '#search-form > fieldset > button > i';
+const ENGLISH_LANGUAGE_SELECTOR = '#searchLanguage > option[value="en"]';
+const LANGUAGE = '#jsLangLabel';
+const READ_WIKIPEDIA_IN_YOUR_LANGUAGE_SELECTOR = '#js-lang-list-button > i.sprite.svg-arrow-down-blue';
+const ENGLISH_LINK = '#js-lang-lists > div:nth-child(2) > ul > li:nth-child(3) > a';
 
 
 async function searchTextInWikipedia(searchValue) {
@@ -19,10 +19,10 @@ async function searchTextInWikipedia(searchValue) {
 
     await type(SEARCH_TEXT_FIELD, searchValue);
     await click(SEARCH_ICON);
-    await searchResultPage.validateHeadline('headline text');
+    await searchResultPage.validateFirstHeadline(searchValue);
 }
 
-async function setEnglishLanguage(LanguageSelectBoxValue) {
+async function setLanguage(LanguageSelectBoxValue) {
     //select a language by passing a value
 
     switch (LanguageSelectBoxValue) {
@@ -40,11 +40,10 @@ async function readWikipediaInEnglishLanguage(readWikipediaLanguage) {
 
     await click(READ_WIKIPEDIA_IN_YOUR_LANGUAGE_SELECTOR);
     switch (readWikipediaLanguage) {
-        case "English":
+        case 'English':
             await click(ENGLISH_LINK);
             const currentURL = await url();
-            expect(currentURL).to.match(/en./);
-            console.log(currentURL);
+            expect(currentURL).to.contain(/en./);
             break;
     }
 }
@@ -52,6 +51,6 @@ async function readWikipediaInEnglishLanguage(readWikipediaLanguage) {
 
 module.exports = {
     searchTextInWikipedia,
-    setEnglishLanguage,
+    setLanguage,
     readWikipediaInEnglishLanguage
 }
