@@ -9,7 +9,7 @@ test('Handling multi-tabs', async () => {
     const {click: clickInFirstTab} = withContext({
         frameSelector: '#iframeResult',
         tabIndex: 0
-        //tab index will point to the desired tab. in this case, the main tab (0).
+        //tabIndex will point to the desired tab. in this case, the main tab (0).
     });
     await clickInFirstTab('body > a');
 
