@@ -1,6 +1,6 @@
 # This folder contains usage examples of our "wait for" mechanism
 
-#################################################################################################################################################
+##########################################################################################################
 
 
 There might be instances where you want to wait for a certain event to occur before taking the next step. It can be a wait to display an element, wait for text display, simply wait for 2 seconds or for any other reason for which the wait is required.
