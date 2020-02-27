@@ -20,4 +20,3 @@ test('Search a value in wikipedia by reading from a parameter file', async () =>
     type('#searchInput', readFromParamFile('searchText'));
     //Set a text from a parameter file. In this case the seach value will be: "Software Testing".
 });
-
