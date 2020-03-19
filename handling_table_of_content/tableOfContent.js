@@ -1,7 +1,7 @@
 'use strict';
 
 const { expect } = require('chai');
-const {go, test, cliAction, evaluate} = require('testim');
+const {go, test, Locator, evaluate, text} = require('testim');
 
 
 const listOfExpectedValues = ['Alfreds', 'Maria', 'Germany', 
@@ -9,7 +9,7 @@ const listOfExpectedValues = ['Alfreds', 'Maria', 'Germany',
         'L.B Winecellars', 'Yoshi', 'Canada', 'M.A Riuniti', 'Giovanni', 'Italy'];
 
 
-test("Validate table contains all expected values ", async () => {
+test("Validate table contains all expected values", async () => {
     await go('http://jsbin.testim.io/nez/6');
 
     const tableCellContent = await evaluate(() => Array.from(document.querySelectorAll('#table > tbody > tr > td')).map(e => e.innerText));
@@ -18,7 +18,7 @@ test("Validate table contains all expected values ", async () => {
 });
 
 
-test("Validate table contains at least some of the expected values ", async () => {
+test("Validate table contains at least some of the expected values", async () => {
     await go('http://jsbin.testim.io/nez/6');
 
     const tableCellContent = await evaluate(() => Array.from(document.querySelectorAll('#table > tbody > tr > td')).map(e => e.innerText));
@@ -27,7 +27,7 @@ test("Validate table contains at least some of the expected values ", async () =
 });
 
 //You can also use "chai" asserions to compare expected values with table content
-test("Validate table contains all expected values 02 ", async () => {
+test("Validate table contains all expected values 02", async () => {
     await go('http://jsbin.testim.io/nez/6');
 
     const tableCellContent = await evaluate(() => Array.from(document.querySelectorAll('#table > tbody > tr > td')).map(e => e.innerText));
@@ -44,5 +44,20 @@ test("Validate table contains all expected values 03", async () => {
 
         expect(tableCellContent[i]).to.eql(listOfExpectedValues[i]);
     }
+});
+
+//You can go over table rows with nthChild function
+test("Working with nth-child selector to get a table row", async () => {
+    await go('http://jsbin.testim.io/nez/6');
+    const firstTablrRow = await text(Locator.fromSelector('#table tbody').nthChild(2));
+    console.log(firstTablrRow);
+});
+
+
+//You can also get a specific cell from a table with nthChild function
+test.only("Working with nth-child selector to get a specific table cell", async () => {
+    await go('http://jsbin.testim.io/nez/6');
+    const firstTableCell = await text(Locator.fromSelector('#table tbody').nthChild(2).nthChild(1));
+    console.log(firstTableCell);
 });
 
