@@ -55,9 +55,8 @@ test("Working with nth-child selector to get a table row", async () => {
 
 
 //You can also get a specific cell from a table with nthChild function
-test.only("Working with nth-child selector to get a specific table cell", async () => {
+test("Working with nth-child selector to get a specific table cell", async () => {
     await go('http://jsbin.testim.io/nez/6');
     const firstTableCell = await text(Locator.fromSelector('#table tbody').nthChild(2).nthChild(1));
     console.log(firstTableCell);
 });
-
