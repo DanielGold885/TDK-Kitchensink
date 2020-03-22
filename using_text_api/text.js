@@ -20,13 +20,12 @@ test('using text api 02', async () => {
 });
 
 
-test.only('using text api with nthChild selector', async () => {
+test('using text api with nthChild selector', async () => {
     await go('http://jsbin.testim.io/mid/5');
     const firstListItem = await text(Locator.fromSelector('body > ul').nthChild(1));
     //This will return the first list item
 
     await type('#input', firstListItems);
 });
-
 
 
